@@ -20,6 +20,9 @@ clean:
 tex:
 	platex $(TEX)
 
+pbibtex:
+	pbibtex $(FILENAME)
+
 dvipdf:
 	dvipdfmx $(DVI)
 
