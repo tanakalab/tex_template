@@ -1,0 +1,76 @@
+%定義
+
+\documentclass[10pt,twocolumn]{jarticle} 
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{euler}
+
+\pagestyle{empty}
+
+%余白とか
+
+\setlength{\topmargin}{-2cm} 
+\setlength{\textheight}{26.5cm} 
+\setlength{\textwidth}{18.5cm}
+\setlength{\oddsidemargin}{-1.3cm} 
+\setlength{\columnsep}{.5cm}
+\newcommand{\noin}{\noindent}
+\catcode`@=\active \def@{\hspace{0.9bp}-\hspace{0.9bp}}
+\newtheorem{dfn}{定義}[section]
+
+
+%タイトル
+
+\title{題名 一目で分からせることのできる題名}
+\setcounter{footnote}{1}
+\author{原田 崇司\if0\thanks{神奈川大学大学院理学研究科情報科学専攻 田中研究室}\fi}
+\date{\today}
+\西暦
+
+%タイトル作成
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% 1. 何について話すか(概要) => 2. 具体例(図だけで十分) => 3. 結論(一番伝えたい事)
+%
+% 結論に向けて, 流れを意識して書く.
+%
+% 構文. 主語, 述語, 目的語をはっきり書く.
+%
+% 受動態を使わない.
+%
+% 辞書, 参考書, 先生に伺うことより, 適切な単語, 表現で文章を作成する.
+%
+% 内容を削る. 必要最小限
+%
+% コンマを列挙以外で2つ以上使う, ``~の~の'', の如きは使わない.
+
+\section{概略}
+\noindent ゼミ資料の内容を数行で書く. どんな疑問について, どんな所に着眼して, どんな検討をし, どんな結論を得たのか.
+
+\section{準備}
+\noindent 先生の授業の様に前回の復習から始める. 予備知識を復習する. ``連とは何か''など.
+
+\section{前回までの経緯, 問題点}
+\noindent 何が問題となっていたかを概説する.
+
+\section{本論}
+
+
+\section{まとめ, 今後の課題}
+
+
+\section{チェックリスト}
+\begin{itemize}
+\item 
+\item 
+\end{itemize}
+
+\end{document}
