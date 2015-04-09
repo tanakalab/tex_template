@@ -6,8 +6,8 @@ PDF = $(FILENAME).pdf
 
 all:
 	make tex
-	#bibtex を用いる場合は，下記の行のコメントアウトを取り除いて使用する
-	make pbibtex
+#bibtex を用いる場合は，下記の行のコメントアウトを取り除いて使用する
+	#make pbibtex
 	make tex
 	make tex
 	make dvipdf
