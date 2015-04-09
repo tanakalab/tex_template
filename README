@@ -1,0 +1,11 @@
+このレポジトリには，TEXを忘れてしまった人用に，
+簡単に TEXファイル -> PDFファイルを生成する為の
+道具を置いています．
+
+使い方は，
+
+ディレクトリを作成する．($mkdir "directory name" <ret>)
+レポジトリをクローンする．($git clone https://github.com/tanakalab/tex_template.git" <ret>)
+make する．($make <ret>)
+
+ファイル名を適当に変換し，bibファイルの中身も適宜追加して下さい．
