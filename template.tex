@@ -25,9 +25,9 @@
 
 %タイトル
 
-\title{題名 一目で分からせることのできる題名}
+\title{第100回研究報告 \\ Turing Award, G\"{o}del Prize を受賞する為に必要な最低限の知識ついて}
 \setcounter{footnote}{1}
-\author{原田 崇司\if0\thanks{神奈川大学大学院理学研究科情報科学専攻 田中研究室}\fi}
+\author{神奈川　太郎\if0\thanks{神奈川大学大学院理学研究科情報科学専攻 田中研究室}\fi}
 \date{\today}
 \西暦
 
@@ -38,43 +38,69 @@
 \maketitle
 \thispagestyle{empty}
 
-% 1. 何について話すか(概要) => 2. 具体例(図だけで十分) => 3. 結論(一番伝えたい事)
+% 1．何について話すか(概要) => 2．具体例(図だけで十分) => 3．結論(一番伝えたい事)
 %
-% 結論に向けて, 流れを意識して書く.
+% 結論に向けて，流れを意識して書く．
 %
-% 構文. 主語, 述語, 目的語をはっきり書く.
+% 構文．主語，述語，目的語をはっきり書く．
 %
-% 受動態を使わない.
+% 受動態を使わない．
 %
-% 辞書, 参考書, 先生に伺うことより, 適切な単語, 表現で文章を作成する.
+% 辞書，参考書，先生に伺うことより，適切な単語，表現で文章を作成する．
 %
-% 内容を削る. 必要最小限
+% 内容を削る．必要最小限
 %
-% コンマを列挙以外で2つ以上使う, ``~の~の'', の如きは使わない.
+% コンマを列挙以外で2つ以上使う，``~の~の''，の如きは使わない．
+
+% 
 
 \section{概略}
-\noindent ゼミ資料の内容を数行で書く. どんな疑問について, どんな所に着眼して, どんな検討をし, どんな結論を得たのか.
+\noindent ゼミ資料の内容を数行で書く．どんな疑問について，どんな所に着眼して，どんな検討をし，どんな結論を得たのか．
 
 \section{準備}
-\noindent 先生の授業の様に前回の復習から始める. 予備知識を復習する. ``連とは何か''など.
+\noindent 先生の授業の様に前回の復習から始める．予備知識を復習する．``連とは何か''など．
 
-\section{前回までの経緯, 問題点}
-\noindent 何が問題となっていたかを概説する.
+\section{前回までの経緯，問題点}
+\noindent 何が問題となっていたかを概説する．
 
 \section{本論}
+加減乗除を理解している必要がある．
 
+\section{まとめ，今後の課題}
+因数分解を理解する予定．
 
-\section{まとめ, 今後の課題}
+\par
 
 {\small
-\bibliographystyle{../ieice.bst}
-\bibliography{../packet_filtering}
+ \bibliographystyle{ieice.bst}
+ \bibliography{template}
 }
 
 \section{チェックリスト}
 \begin{itemize}
-\item 
-\item 
+\item $5 + 3 = ?$
+\item $5 \times 5 = ?$
 \end{itemize}
+
+\appendix
+\section{参考文献の書き方}
+
+参考文献の書く為には，\verb|makefile|中の \verb|pbibtex|行のコメントアウト(\verb|#|)を外し，本文中参照すれば良い．例えば，texファイル中に\verb|\cite{siftsearch}|（\verb|siftsearch|は，\verb|tamplate.bib|中で論文\cite{siftsearch}を参照する為に対応付けたラベルである）と書けば，\par
+{\centering
+
+\cite{siftsearch}
+
+}
+\noindent の様に参考文献に対応する番号を表示する．また，
+
+\begin{verbatim}
+{\small
+\bibliographystyle{ieice.bst}
+\bibliography{template}
+}
+\end{verbatim}
+をtexファイル中に書いた場所に参考文献が表示される．但し，\verb|pbibtex| を行う（\verb|makefile|中のコメントアウトを取り除く）のに，本文中に上記の\verb|\bibliographystyle{~}|を記さない，または，本文中で参照（\verb|\cite{~}|）を行わない，ということをすると，コンパイルエラーになる（この\verb|makefile|，若しくはtexファイルが悪いだけで，良い方法があるかもしれないので，解決法をご存知の方は，教えて下さい）．\par
+\noindent \verb|r201470039hs at kanagawa-u.ac.jp|
+
 
 \end{document}
