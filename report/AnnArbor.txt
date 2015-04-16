@@ -1,0 +1,5 @@
+\useinnertheme[shadow=true]{rounded}
+\useoutertheme{infolines}
+\usecolortheme{wolverine}
+\setbeamerfont{block title}{size={}}
+\setbeamercolor{titlelike}{parent=structure, bg=yellow!85!orange}
