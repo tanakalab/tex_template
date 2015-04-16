@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.1415926-p3.3-110825-2.4 (utf8.euc) (TeX Live 2012) (format=platex 2013.3.16)  16 APR 2015 17:12
+This is e-pTeX, Version 3.1415926-p3.3-110825-2.4 (utf8.euc) (TeX Live 2012) (format=platex 2013.3.16)  16 APR 2015 20:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -332,26 +332,39 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 57.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 57.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 67.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 67.
 
-(./template.bbl)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 81.
- (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
+[]  \OT1/cmtt/m/n/10 \caption{\JY1/mc/m/n/10 表\OT1/cmtt/m/n/10 \ref{rulelist}\
+JY1/mc/m/n/10 から構成した
+ []
+
+(./rbtrie.tps) (./template.bbl)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 124.
+
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 81.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 124.
+ [1
 
-[1
 
+] [2
 
-] (./template.aux) ) 
+]
+(./template.aux) ) 
 Here is how much of TeX's memory you used:
- 1850 strings out of 494052
- 22250 string characters out of 3155844
- 77885 words of memory out of 3000000
- 5250 multiletter control sequences out of 15000+200000
- 23022 words of font info for 96 fonts, out of 3000000 for 9000
+ 1861 strings out of 494052
+ 22361 string characters out of 3155844
+ 87885 words of memory out of 3000000
+ 5257 multiletter control sequences out of 15000+200000
+ 23329 words of font info for 97 fonts, out of 3000000 for 9000
  745 hyphenation exceptions out of 8191
- 27i,7n,26p,439b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,11n,26p,439b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on template.dvi (1 page, 3796 bytes).
+Output written on template.dvi (2 pages, 7176 bytes).

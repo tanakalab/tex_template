@@ -64,6 +64,7 @@
 \noindent 何が問題となっていたかを概説する．
 
 \section{本論}
+\subsection{表の挿入}
 加減乗除を理解している必要がある．表を用いて確かめるとか確かめないとか．
 
 \begin{table}[htbp]
@@ -84,6 +85,28 @@
   \label{rulelist}
  \end{center}
 \end{table}
+
+\subsection{図の挿入}
+図\ref{paper_rbtrie}には，一ヶ所誤りがある．見つけよ．見つけられれば，$1$から$2$までの数を数えられている．\par
+\noindent 下の用に記述すると，
+\begin{verbatim}
+\begin{figure}[!htbp]
+ \centering{
+  \scalebox{0.8}{\input{rbtrie.tps}}
+  \caption{表\ref{rulelist}から構成したRun-Based Trie}
+  \label{paper_rbtrie}
+ }
+\end{figure}
+\end{verbatim}
+
+図\ref{paper_rbtrie}が適当な位置に挿入される．
+\begin{figure*}[!htbp]
+ \centering{
+  \scalebox{0.9}{\input{rbtrie.tps}}
+  \caption{表\ref{rulelist}から構成したRun-Based Trie}
+  \label{paper_rbtrie}
+ }
+\end{figure*}
 
 
 \section{まとめ，今後の課題}
