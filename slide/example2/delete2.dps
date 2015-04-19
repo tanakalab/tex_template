@@ -1,0 +1,322 @@
+%%BoundingBox: 15 588 468 743
+%%Title: delete2
+%%CreationDate: Sun Apr 19 17:1:22 2015
+%%Creator: tgif2tex version 2.13 (Original:  Tgif-4.2.5-QPL written by William Chia-Wei Cheng (bill.cheng@acm.org))
+%%ProducedBy: (unknown)
+%%Orientation: Portrait
+%%Pages: 1
+%%DocumentFonts: (atend)
+%%EndComments
+%%BeginProlog
+
+/tgifdict 54 dict def
+tgifdict begin
+
+/tgifellipsedict 6 dict def
+tgifellipsedict /mtrx matrix put
+
+/TGEL % tgifellipse
+ { tgifellipsedict begin
+      /yrad exch def
+      /xrad exch def
+      /y exch def
+      /x exch def
+      /savematrix mtrx currentmatrix def
+      x y translate
+      xrad yrad scale
+      0 0 1 0 360 arc
+      savematrix setmatrix
+   end
+ } def
+
+/TGMAX
+ { exch dup 3 1 roll exch dup 3 1 roll gt { pop } { exch pop } ifelse
+ } def
+/TGMIN
+ { exch dup 3 1 roll exch dup 3 1 roll lt { pop } { exch pop } ifelse
+ } def
+/TGSW { stringwidth pop } def
+/tgifstrw 0 def
+
+/bd { bind def } bind def
+
+/GS { gsave } bd
+/GR { grestore } bd
+/NP { newpath } bd
+/CP { closepath } bd
+/CHP { charpath } bd
+/CT { curveto } bd
+/L { lineto } bd
+/RL { rlineto } bd
+/M { moveto } bd
+/RM { rmoveto } bd
+/S { stroke } bd
+/F { fill } bd
+/TR { translate } bd
+/RO { rotate } bd
+/SC { scale } bd
+/MU { mul } bd
+/DI { div } bd
+/DU { dup } bd
+/NE { neg } bd
+/AD { add } bd
+/SU { sub } bd
+/PO { pop } bd
+/EX { exch } bd
+/CO { concat } bd
+/CL { clip } bd
+/EC { eoclip } bd
+/EF { eofill } bd
+/IM { image } bd
+/IMM { imagemask } bd
+/ARY { array } bd
+/SG { setgray } bd
+/RG { setrgbcolor } bd
+/SD { setdash } bd
+/W { setlinewidth } bd
+/SM { setmiterlimit } bd
+/SLC { setlinecap } bd
+/SLJ { setlinejoin } bd
+/SH { show } bd
+/FF { findfont } bd
+/MS { makefont setfont } bd
+/AR { arcto 4 {pop} repeat } bd
+/CURP { currentpoint } bd
+/FLAT { flattenpath strokepath clip newpath } bd
+/TGSM { tgiforigctm setmatrix } def
+/TGRM { savematrix setmatrix } def
+
+end
+
+%%EndProlog
+%!
+%%BoundingBox: 15 588 468 743
+%%Page: 1 1
+
+%%PageBoundingBox: 14 582 469 744
+tgifdict begin
+/tgifsavedpage save def
+
+1 SM
+1 W
+
+0 SG
+
+72 0 MU 72 11 MU TR
+72 128 DI 100.000 MU 100 DI DU NE SC
+
+GS
+
+/tgiforigctm matrix currentmatrix def
+
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      320 320 M
+      336 256 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      336 256 M
+      352 320 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      336 256 M
+      336 192 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      144 192 M
+      432 128 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      432 128 M
+      336 192 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      528 192 M
+      432 128 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      432 128 M
+      720 192 L
+   TGSM
+   1 W
+   S
+GR
+
+
+
+% OVAL
+0 SG
+NP 432 128 4 4 TGEL
+CP 1 SG F
+   0 SG
+GS
+   GS
+      NP 432 128 4 4 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 144 192 4 4 TGEL
+CP 1 SG F
+   0 SG
+GS
+   GS
+      NP 144 192 4 4 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 336 192 4 4 TGEL
+CP 1 SG F
+   0 SG
+GS
+   GS
+      NP 336 192 4 4 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 336 256 4 4 TGEL
+CP 1 SG F
+   0 SG
+GS
+   GS
+      NP 336 256 4 4 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 320 320 4 4 TGEL
+CP 1 SG F
+   0 SG
+GS
+   GS
+      NP 320 320 4 4 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 352 320 4 4 TGEL
+CP 1 SG F
+   0 SG
+GS
+   GS
+      NP 352 320 4 4 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 528 192 4 4 TGEL
+CP 1 SG F
+   0 SG
+GS
+   GS
+      NP 528 192 4 4 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 720 192 4 4 TGEL
+CP 1 SG F
+   0 SG
+GS
+   GS
+      NP 720 192 4 4 TGEL
+      S
+   GR
+GR
+
+
+
+
+
+
+
+% POLY/OPEN-SPLINE
+1.000 0.000 0.000 RG
+GS
+   NP
+      340 288 M
+      356 304 L
+   TGSM
+   7 W
+   S
+   1 W
+GR
+
+% POLY/OPEN-SPLINE
+1.000 0.000 0.000 RG
+GS
+   NP
+      356 288 M
+      340 304 L
+   TGSM
+   7 W
+   S
+   1 W
+GR
+
+GR
+tgifsavedpage restore
+end
+showpage
+%MatchingCreationDate: Sun Apr 19 17:1:22 2015
