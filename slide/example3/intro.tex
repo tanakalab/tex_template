@@ -1,0 +1,110 @@
+\documentclass[12pt,dvipdfmx,mathserif,uplatex,aspectratio=32]{beamer}
+\usetheme{boxes}
+\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+\usepackage{euler}
+\usepackage{multicol}
+\usepackage{subfigure}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\setbeamerfont{title}{size=\LARGE}
+
+
+\title{パケット分類とは}
+\subtitle{2015年度 前期輪講 \\ "Survey and Taxonomy of Packet Classification Techniques" \\ Abstract and Introduction}
+\author{原田崇司}
+\date[]{2015年4月21日}
+\institute[所属]{神奈川大学大学院 理学研究科 情報科学専攻 田中研究室}
+% [..]に省略名が書ける
+
+\begin{document}
+
+\frame{\maketitle}
+
+\section*{内容}
+
+
+\begin{frame}{目次}
+  \tableofcontents
+\end{frame}
+
+
+
+\section{フィルタリング}
+
+
+\begin{frame}{フィルタリング}
+% daggerについて説明
+% FlowID（Permit, DenyなどのAction）について説明
+% nonexclusive filter, exclusive filter
+
+\begin{table}
+ \begin{tabular}{|l|l|l|l||r|c|} \hline
+ \multicolumn{4}{|c||}{Filter} & \multicolumn{2}{|c|}{Action} \\ \hline
+ SA & DA & Prot & DP & FlowID & PT  \\ \hline
+ $11010010$ & $*$        & TCP  & [$3:15$] & $0$  & $3$  \\
+ $10011100$ & $*$        & $*$  & [$1:1$]  & $1$  & $5$ \\
+ $101101*$  & $001110*$  & $*$  & [$0:15$] & $2$  & $8^{\dagger}$ \\
+ $10011100$ & $01101010$ & UDP  & [$5:5$]  & $3$  & $2$ \\
+ $*$        & $*$        & ICMP & [$0:15$] & $4$  & $9^{\dagger}$ \\
+ \multicolumn{1}{|c}{\vdots} & \multicolumn{1}{|c}{\vdots} & \multicolumn{1}{|c}{\vdots} & \multicolumn{1}{|c||}{\vdots} & \multicolumn{1}{|c}{\vdots} & \multicolumn{1}{|c|}{\vdots} \\
+ $01110010$ & $*$        & TCP  & [$3:15$] & $12$ & $4^{\dagger}$\\
+ $10011100$ & $01101010$ & TCP  & [$0:1$]  & $13$ & $3$ \\
+ $01110010$ & $*$        & $*$  & [$3:3$]  & $14$ & $3$ \\
+ $100111*$  & $011010*$  & UDP  & [$1:1$]  & $15$ & $4$ \\ \hline
+ \end{tabular}
+ %\caption{Example Rulelist}
+\end{table}
+
+\end{frame}
+
+\begin{frame}{フィルタリング}
+
+{\centering
+SA$=10011100$，DA$=01101010$，Prot$=$UDP, DP$=1$
+
+}
+\begin{table}
+ %\caption{Example Rulelist}
+{\centering
+
+ {\small
+ \begin{tabular}{|l|l|l|l||r|c|c} \cline{1-6}
+ \multicolumn{4}{|c||}{Filter} & \multicolumn{2}{|c|}{Action} & \\ \cline{1-6}
+ SA & DA & Prot & DP & FlowID & PT  & \\ \cline{1-6}
+ $11010010$ & $*$        & TCP  & [$3:15$] & $0$  & $3$ & \\
+ $10011100$ & $*$        & $*$  & [$1:1$]  & $1$  & $5$ & \\
+ $101101*$  & $001110*$  & $*$  & [$0:15$] & $2$  & $8^{\dagger}$ & \\
+ $10011100$ & $01101010$ & UDP  & [$5:5$]  & $3$  & $2$ & \\
+ $*$        & $*$        & ICMP & [$0:15$] & $4$  & $9^{\dagger}$ & \\
+ \multicolumn{1}{|c}{\vdots} & \multicolumn{1}{|c}{\vdots} & \multicolumn{1}{|c}{\vdots} & \multicolumn{1}{|c||}{\vdots} & \multicolumn{1}{|c}{\vdots} & \multicolumn{1}{|c|}{\vdots} & \\
+ $01110010$ & $*$        & TCP  & [$3:15$] & $12$ & $4^{\dagger}$ & \\
+ $10011100$ & $01101010$ & TCP  & [$0:1$]  & $13$ & $3$ & \\
+ $01110010$ & $*$        & $*$  & [$3:3$]  & $14$ & $3$ & \\
+ $100111*$  & $011010*$  & UDP  & [$1:1$]  & $15$ & $4$ & \color{red}{\LARGE $\Leftarrow$} \\ \cline{1-6}
+ \end{tabular}
+
+ }
+
+}
+\end{table}
+
+\end{frame}
+
+
+\section{フィルタリングにおける制約}
+
+
+\begin{frame}{frame2}
+
+\end{frame}
+
+
+
+\section{問題の回避}
+
+
+\begin{frame}
+
+\end{frame}
+
+
+\end{document}
