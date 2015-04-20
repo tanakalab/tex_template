@@ -1,4 +1,0 @@
-\beamer@endinputifotherversion {3.26pt}
-\beamer@sectionintoc {1}{Packet Filtering と Run-Based Trie}{2}{0}{1}
-\beamer@sectionintoc {2}{決定木を用いた Run-Based Trie の探索法}{8}{0}{2}
-\beamer@sectionintoc {3}{まとめと今後の課題}{12}{0}{3}
