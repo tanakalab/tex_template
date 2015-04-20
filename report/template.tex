@@ -108,6 +108,37 @@
  }
 \end{figure*}
 
+\subsection{数式}
+数式モードにはいくつか方法がある．
+\begin{itemize}
+ \item \verb|$ $|で挟んで文章内に数式を入れる
+ \item \verb|\equation|環境を用いる（数式に番号を振る）
+ \item \verb|\[ \]|を用いる（数式に番号を振らない）
+\end{itemize}
+
+田中研究室では，パケットの頻度分布を$F$，ルールリストを${\mathbf R}$として，遅延$L(F, {\mathbf R})$を次のように定義する．
+
+\[
+ L(F, {\mathbf R}) = \sum_{i=1}^{n-1} i \times \| R_{i}(F, {\mathbf R})\| + (n-1) \times \| R_{n}(F, {\mathbf R})\| 
+\]
+
+$\|R_{i}(F, {\mathbf R}\|$は，パケットの頻度分布$F$，ルールリスト${\mathbf R}$における，$R_{i}$の評価パケット数を表す．$n$は，ルールリスト中のルールの数である．
+
+\par
+
+\verb|\equation|の例を下記に示す．\par
+(\ref{easy})の方程式を解け．
+\begin{equation}
+ 1 + x = 2
+ \label{easy}
+\end{equation}
+
+自然数の全体がなす集合は，
+\begin{equation}
+\mathbb{N} \cong \mathbb{N} + \mathbf{1}
+ \label{nat}
+\end{equation}
+を満たすような最小の$\mathbb{N}$である．
 
 \section{まとめ，今後の課題}
 因数分解を理解する予定．

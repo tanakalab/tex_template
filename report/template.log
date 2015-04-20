@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.1415926-p3.3-110825-2.4 (utf8.euc) (TeX Live 2012) (format=platex 2013.3.16)  16 APR 2015 20:44
+This is e-pTeX, Version 3.1415926-p3.3-110825-2.4 (utf8.euc) (TeX Live 2012) (format=platex 2013.3.16)  20 APR 2015 14:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -342,29 +342,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--100
 JY1/mc/m/n/10 から構成した
  []
 
-(./rbtrie.tps) (./template.bbl)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 124.
+(./rbtrie.tps)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 114.
 
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 124.
- [1
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
+
+(./template.bbl) [1
 
 
 ] [2
 
-]
-(./template.aux) ) 
+] (./template.aux) ) 
 Here is how much of TeX's memory you used:
- 1861 strings out of 494052
- 22361 string characters out of 3155844
+ 1869 strings out of 494052
+ 22431 string characters out of 3155844
  87885 words of memory out of 3000000
- 5257 multiletter control sequences out of 15000+200000
- 23329 words of font info for 97 fonts, out of 3000000 for 9000
+ 5262 multiletter control sequences out of 15000+200000
+ 24256 words of font info for 100 fonts, out of 3000000 for 9000
  745 hyphenation exceptions out of 8191
  27i,11n,26p,439b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on template.dvi (2 pages, 7176 bytes).
+Output written on template.dvi (2 pages, 8832 bytes).
