@@ -21,6 +21,18 @@
 \usepackage{euler}
 \usepackage{multicol}
 \usepackage{subfigure}
+\usepackage{tikz}
+\usepackage{ifthen}
+%\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{intersections, calc}
+\usetikzlibrary{decorations.pathmorphing}% coil 装飾
+
+%% \myCoilArrow{長さ} : 変な矢印
+\newcommand{\myRightArrow}[1]{%
+\tikz[baseline=-1pt]
+  \draw (0,0)--(.5,0)--(.5,-0.1)--(.7,.1)--(.5,.3)--(.5,.2)--(.5,.2)--(0,.2)--(0,0);
+}
+
 
 %%
 %% プリアンブルに記述
@@ -356,6 +368,38 @@
 %% }
 %% \end{frame}
 
+\begin{frame}{TikZ test}
+
+しかし，不要なパス，ノードが大量発生
+\begin{tikzpicture}[baseline=-0.5pt]
+  \draw (.2,0)--(.7,0)--(.7,-0.1)--(.9,.1)--(.7,.3)--(.7,.2)--(.7,.2)--(.2,.2)--cycle; 
+  \fill[red] (0,0) circle [radius=1pt];% 原点
+\end{tikzpicture}
+{\color{red}決定木の枝刈り}が必要 
+
+\vspace{5mm}
+
+しかし，不要なパス，ノードが大量発生 \tikz[baseline=0pt] \draw (0,0)--(.5,0)--(.5,-0.1)--(.7,.1)--(.5,.3)--(.5,.2)--(.5,.2)--(0,.2)--cycle; {\color{red}決定木の枝刈り}が必要 
+
+\vspace{5mm}
+
+しかし，不要なパス，ノードが大量発生 \tikz[baseline=-1pt] \draw (0,0)--(.5,0)--(.5,-0.1)--(.7,.1)--(.5,.3)--(.5,.2)--(.5,.2)--(0,.2)--cycle; {\color{red}決定木の枝刈り}が必要 
+
+\vspace{5mm}
+
+\huge Hello
+% Y座標が0ptの垂直位置をベースラインと一致させる
+\begin{tikzpicture}[thick, baseline=0pt]
+  \draw (-1,-1)--(-0.5,0)--(0,-1)--cycle;% さんかく
+  \fill[red] (0,0) circle [radius=3pt];% 原点
+  \fill (-1,2) circle [radius=0.5];% まる
+  \draw (1,0.5) rectangle (2,1.5);% しかく
+\end{tikzpicture}
+\TeX
+
+
+\end{frame}
+
 \section{決定木を用いた Run-Based Trie の探索法}
 %11枚目
 \begin{frame}{集合族（Simple Searchでの$T_{i}$の辿り方の場合分け）}
@@ -402,7 +446,11 @@
 Run-Based Trie を用いて決定木を辿る．最優先ルールは $R_{4}$\\
 \vspace{3mm}
 
-しかし，不要なパス，ノードが大量発生 $\rightarrow$ {\color{red}決定木の枝刈り}が必要
+しかし，不要なパス，ノードが大量発生 \myRightArrow \par {\color{red}決定木の枝刈り}が必要
+% \tikz{
+%     \path (0,0) -- (1.0);
+% }
+
 \end{frame}
 
 

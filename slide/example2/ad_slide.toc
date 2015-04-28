@@ -1,2 +1,2 @@
 \beamer@endinputifotherversion {3.26pt}
-\beamer@sectionintoc {1}{決定木を用いた Run-Based Trie の探索法}{1}{0}{1}
+\beamer@sectionintoc {1}{決定木を用いた Run-Based Trie の探索法}{2}{0}{1}
