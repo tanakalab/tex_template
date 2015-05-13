@@ -1,0 +1,79 @@
+\begin{thebibliography}{10}
+
+\bibitem{survey_Taylor_2005}
+D.E. Taylor, ``Survey and taxonomy of packet classification techniques,'' ACM
+  Comput. Surv., vol.37, no.3, pp.238--275, Sept. 2005.
+
+\bibitem{hicuts19}
+P.~Gupta, and N.~Mckeown, ``Packet classification using hierarchical
+  intelligent cuttings,'' in Hot Interconnects VII, pp.34--41, 1999.
+
+\bibitem{rbt}
+K.~TANAKA, and K.~MIKAWA, ``Run-{B}ased {T}rie {I}nvolving the {S}tructure of
+  {A}rbitrary {B}itmask {R}ules,'' IEICE Trans. Commun., vol.E98-D, no.6, Jun
+  2015.
+
+\bibitem{yuto}
+小林由人，三河賢治，田中賢，``トライを用いた高速パケット分類法の提案，\inhibitglue
+  '' 電子情報通信学会総合大会講演論文集，p.198，March 2015.
+
+\bibitem{hypercuts}
+S.~Singh, F.~Baboescu, G.~Varghese, and J.~Wang, ``Packet classification using
+  multidimensional cutting,'' Proceedings of the 2003 Conference on
+  Applications, Technologies, Architectures, and Protocols for Computer
+  Communications, pp.213--224, New York, NY, USA, 2003, ACM.
+
+\bibitem{2014RbtHARADA}
+原田崇司，田中賢，三河賢治，``B-7-27 決定木を用いた{R}un-{B}ased
+  {T}rieの探索法({B}-7.情報ネットワーク,一般セッション)，\inhibitglue ''
+  電子情報通信学会ソサイエティ大会講演論文集，vol.2014，no.2，p.84，sep 2014.
+
+\bibitem{conf/infocom/HamedEA06}
+H.~Hamed, A.~El-Atawy, and E.~Al-Shaer, ``Adaptive statistical optimization
+  techniques for firewall packet filtering,'' INFOCOM, IEEE, 2006.
+
+\bibitem{hikin}
+K.~TANAKA, K.~MIKAWA, and M.~HIKIN, ``A heuristic algorithm for reconstructing
+  a packet filter with dependent rules,'' IEICE Trans. Commun., vol.96, no.1,
+  pp.155-162, 2013.
+
+\bibitem{hicuts20}
+P.~Gupta, and N.~McKeown, ``Classifying packets with hierarchical intelligent
+  cuttings,'' Micro, IEEE, vol.20, no.1, pp.34-41, Jan 2000.
+
+\bibitem{quad-trie}
+H.~Lim, Y.~Choe, M.~Shim, and J.~Lee, ``A quad-trie conditionally merged with a
+  decision tree for packet classification,'' Communications Letters, IEEE,
+  vol.18, no.4, pp.676-679, April 2014.
+
+\bibitem{siftsearch}
+長谷川創，三河賢治，田中賢，``B-7-33
+  任意のビットマスクに対応した階層型トライの提案(b-7.情報ネットワーク,一般セッション)，\inhibitglue
+  '' 電子情報通信学会総合大会講演論文集，vol.2011，no.2，p.197，feb 2011.
+
+\bibitem{Taylor_ClassBench}
+D.E. Taylor, and J.S. Turner, ``Classbench: A packet classification
+  benchmark,'' IEEE/ACM Trans. Netw., vol.15, no.3, pp.499--511, June 2007.
+
+\bibitem{takeyama}
+K.~Tanaka, K.~Mikawa, and K.~Takeyama, ``Optimization of packet filter with
+  maintenance of rule dependencies,'' IEICE Communications Express, vol.2,
+  no.2, pp.80-85, 2013.
+
+\bibitem{sgm}
+A.~Tapdiya, and E.~Fulp, ``Towards optimal firewall rule ordering utilizing
+  directed acyclical graphs,'' Computer Communications and Networks, 2009.
+  ICCCN 2009. Proceedings of 18th Internatonal Conference on, pp.1-6, Aug 2009.
+
+\bibitem{grouper-conf}
+J.~Ligatti, J.~Kuhn, and C.~Gage, ``A packet-classification algorithm for
+  arbitrary bitmask rules, with automatic time-space tradeoffs,'' Proceedings
+  of the International Conference on Computer Communication Networks ({ICCCN}),
+  pp.145--150, Aug. 2010.
+
+\bibitem{pagiamtzis-jssc:2006}
+K.~Pagiamtzis, and A.~Sheikholeslami, ``Content-addressable memory ({CAM})
+  circuits and architectures: A tutorial and survey,'' IEEE Journal of
+  Solid-State Circuits, vol.41, no.3, pp.712-727, March 2006.
+
+\end{thebibliography}

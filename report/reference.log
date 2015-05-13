@@ -1,9 +1,9 @@
-This is e-pTeX, Version 3.1415926-p3.3-110825-2.4 (utf8.euc) (TeX Live 2012) (format=platex 2013.3.16)  9 MAY 2015 09:45
+This is e-pTeX, Version 3.1415926-p3.3-110825-2.4 (utf8.euc) (TeX Live 2012) (format=platex 2013.3.16)  10 MAY 2015 13:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**template.tex
-(./template.tex
+**reference.tex
+(./reference.tex
 pLaTeX2e <2006/11/10> (based on LaTeX2e <2011/06/27> patch level 0)
 Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
@@ -248,8 +248,8 @@ LaTeX Font Info:    Redeclaring math symbol \frown on input line 211.
 LaTeX Font Info:    Redeclaring math accent \hat on input line 254.
 )
 \c@dfn=\count103
- (./template.aux)
-\openout1 = `template.aux'.
+ (./reference.aux)
+\openout1 = `reference.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
@@ -328,42 +328,41 @@ LaTeX Font Info:    Try loading font information for U+euex on input line 38.
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/ueuex.fd
 File: ueuex.fd 2013/01/14 v3.01 Euler extra symbols
 )
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 57.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 57.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 67.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 67.
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
-[]  \OT1/cmtt/m/n/10 \caption{\JY1/mc/m/n/10 表\OT1/cmtt/m/n/10 \ref{rulelist}\
-JY1/mc/m/n/10 から構成した
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+[]\OT1/cmr/m/n/10 template.bib \JY1/mc/m/n/10 には ， 下記の論
  []
 
-(./rbtrie.tps)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 114.
 
- (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+\JY1/mc/m/n/10 文の \OT1/cmr/m/n/10 Bib-TeX \JY1/mc/m/n/10 が記述されている ．
+ []
 
-(./template.bbl) [1
+(./reference.bbl
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 1.
+
+Underfull \hbox (badness 1817) in paragraph at lines 69--73
+[]\OT1/cmr/m/n/10 J. Lig-atti, J. Kuhn, and C. Gage, ``A packet-
+ []
 
 
-] [2
+Underfull \hbox (badness 1264) in paragraph at lines 75--78
+[]\OT1/cmr/m/n/10 K. Pa-giamtzis, and A. Sheik-holeslami, ``Content-
+ []
 
-] (./template.aux) ) 
+) [1
+
+
+] (./reference.aux) ) 
 Here is how much of TeX's memory you used:
- 1869 strings out of 494052
- 22431 string characters out of 3155844
- 87885 words of memory out of 3000000
- 5262 multiletter control sequences out of 15000+200000
- 24256 words of font info for 100 fonts, out of 3000000 for 9000
+ 1813 strings out of 494052
+ 21800 string characters out of 3155844
+ 80885 words of memory out of 3000000
+ 5225 multiletter control sequences out of 15000+200000
+ 17701 words of font info for 72 fonts, out of 3000000 for 9000
  745 hyphenation exceptions out of 8191
- 27i,11n,26p,439b,294s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,7n,26p,392b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on template.dvi (2 pages, 8984 bytes).
+Output written on reference.dvi (1 page, 5576 bytes).

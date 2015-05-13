@@ -1,4 +1,4 @@
-FILENAME = template
+FILENAME = reference
 TEX = $(FILENAME).tex
 DVI = $(FILENAME).dvi
 PDF = $(FILENAME).pdf
@@ -7,7 +7,7 @@ PDF = $(FILENAME).pdf
 all:
 	make tex
 #bibtex を用いる場合は，下記の行のコメントアウトを取り除いて使用する
-	make pbibtex
+#	make pbibtex
 	make tex
 	make tex
 	make dvipdf

@@ -1,0 +1,63 @@
+%定義
+
+\documentclass[10pt,twocolumn]{jarticle} 
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{euler}
+
+\pagestyle{empty}
+
+%余白とか
+
+\setlength{\topmargin}{-3.0cm} 
+\setlength{\textheight}{28.0cm} 
+\setlength{\textwidth}{18.5cm}
+\setlength{\oddsidemargin}{-1.3cm} 
+\setlength{\columnsep}{.5cm}
+\newcommand{\noin}{\noindent}
+\catcode`@=\active \def@{\hspace{0.9bp}-\hspace{0.9bp}}
+\newtheorem{dfn}{定義}[section]
+
+
+%タイトル
+
+\title{template.bib に記述している文献}
+\setcounter{footnote}{1}
+\author{参考　次郎\if0\thanks{神奈川大学大学院理学研究科情報科学専攻 田中研究室}\fi}
+\date{\today}
+\西暦
+
+%タイトル作成
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% 1．何について話すか(概要) => 2．具体例(図だけで十分) => 3．結論(一番伝えたい事)
+%
+% 結論に向けて，流れを意識して書く．
+%
+% 構文．主語，述語，目的語をはっきり書く．
+%
+% 受動態を使わない．
+%
+% 辞書，参考書，先生に伺うことより，適切な単語，表現で文章を作成する．
+%
+% 内容を削る．必要最小限
+%
+% コンマを列挙以外で2つ以上使う，``~の~の''，の如きは使わない．
+
+% 
+
+template.bib には，下記の論文のBibTeXが記述されている．\cite{survey_Taylor_2005},\cite{hicuts19},\cite{rbt},\cite{yuto},\cite{hypercuts},\cite{2014RbtHARADA},\cite{conf/infocom/HamedEA06},\cite{hikin},\cite{hicuts20},\cite{quad-trie},\cite{siftsearch},\cite{Taylor_ClassBench},\cite{takeyama},\cite{sgm},\cite{grouper-conf},\cite{pagiamtzis-jssc:2006}
+
+\bibliographystyle{ieice.bst}
+\bibliography{template}
+
+
+\end{document}
