@@ -1,4 +1,4 @@
-FILENAME = reference
+FILENAME = template
 TEX = $(FILENAME).tex
 DVI = $(FILENAME).dvi
 PDF = $(FILENAME).pdf
