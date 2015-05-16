@@ -1,6 +1,7 @@
 %定義
 
 \documentclass[10pt,twocolumn]{jarticle} 
+\usepackage{algorithmic, algorithm}
 \usepackage{graphicx}
 \usepackage{fancybox}
 \usepackage{comment}
@@ -141,6 +142,42 @@ $\|R_{i}(F, {\mathbf R}\|$は，パケットの頻度分布$F$，ルールリス
 を満たすような最小の$\mathbb{N}$である．
 
 \section{まとめ，今後の課題}
+\begin{algorithm}[H]
+\caption{: cutRunFromRule($R_{i}$)}
+\label{cut_run}
+\begin{algorithmic}[1]
+ \STATE $j \leftarrow 1$ // Run number
+ \STATE $k \leftarrow 0$ // iterator for rule string
+ \STATE $L \leftarrow R_{i}.string.length()$ // iterator for rule string
+% \STATE $run.start$ // Run start point
+ \STATE $sign \leftarrow false$
+ %\STATE $term \leftarrow false$
+ \STATE $run.string \leftarrow$ ""
+ \WHILE{$k < L$}
+  \IF{$R_{i}.string[k] \neq $ '$*$'} %// [k] is $0$ or $1$
+   \IF {$k = 0 \ \lor \ R_{i}.string[k-1] = $'$*$'}
+    \STATE $run.start \leftarrow k + 1$
+   \ENDIF
+   \STATE $run.string$ += $R_{i}.string[k]$
+   \STATE $sign = true$
+  \ELSE                              %// [k] is $*$
+   \IF {$sign = true$}
+    \STATE $R_{i}.hasRun.push\_back(run)$
+    \STATE $run.string \leftarrow$ ""
+    \STATE $sign = false$
+    \STATE $j \leftarrow j + 1$
+   \ENDIF
+  \ENDIF
+  \STATE $k \leftarrow k + 1$
+ \ENDWHILE
+ \IF {$sign = true$}
+  \STATE $R_{i}.hasRun.push\_back(run)$
+ \ENDIF
+\STATE addTerminalMark($R_{i}.hasRun$) 
+\end{algorithmic}
+\end{algorithm}
+
+
 因数分解を理解する予定．
 
 \par
