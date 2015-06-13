@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.1415926-p3.3-110825-2.4 (utf8.euc) (TeX Live 2012) (format=platex 2013.3.16)  13 MAY 2015 10:25
+This is e-pTeX, Version 3.1415926-p3.3-110825-2.4 (utf8.euc) (TeX Live 2012) (format=platex 2013.3.16)  13 JUN 2015 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -329,12 +329,13 @@ LaTeX Font Info:    Try loading font information for U+euex on input line 38.
 File: ueuex.fd 2013/01/14 v3.01 Euler extra symbols
 )
 Underfull \hbox (badness 10000) in paragraph at lines 57--58
-[]\OT1/cmr/m/n/10 template.bib \JY1/mc/m/n/10 には ， 下記の論
+[]\OT1/cmr/m/n/10 template.bib \JY1/mc/m/n/10 には ， 下記の論文の
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 57--58
-\JY1/mc/m/n/10 文の \OT1/cmr/m/n/10 Bib-TeX \JY1/mc/m/n/10 が記述されている ．
+\OT1/cmr/m/n/10 Bib-TeX \JY1/mc/m/n/10 が記述されている ． \OT1/cmr/m/n/10 [[]]
+, [[]],
  []
 
 (./reference.bbl
@@ -343,12 +344,22 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 1.
 
-Underfull \hbox (badness 1817) in paragraph at lines 69--73
+Underfull \hbox (badness 1019) in paragraph at lines 4--6
+[]\OT1/cmr/m/n/10 F. Baboescu, and G. Vargh-ese, ``Scal-able Packet
+ []
+
+
+Underfull \hbox (badness 1158) in paragraph at lines 21--24
+\OT1/cmr/m/n/10 IE-ICE Trans-ac-tions on In-for-ma-tion and Sys-tems,
+ []
+
+
+Underfull \hbox (badness 1817) in paragraph at lines 78--82
 []\OT1/cmr/m/n/10 J. Lig-atti, J. Kuhn, and C. Gage, ``A packet-
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 75--78
+Underfull \hbox (badness 1264) in paragraph at lines 84--87
 []\OT1/cmr/m/n/10 K. Pa-giamtzis, and A. Sheik-holeslami, ``Content-
  []
 
@@ -357,12 +368,12 @@ Underfull \hbox (badness 1264) in paragraph at lines 75--78
 
 ] (./reference.aux) ) 
 Here is how much of TeX's memory you used:
- 1813 strings out of 494052
- 21800 string characters out of 3155844
- 80885 words of memory out of 3000000
- 5225 multiletter control sequences out of 15000+200000
+ 1815 strings out of 494052
+ 21822 string characters out of 3155844
+ 81885 words of memory out of 3000000
+ 5227 multiletter control sequences out of 15000+200000
  17701 words of font info for 72 fonts, out of 3000000 for 9000
  745 hyphenation exceptions out of 8191
- 27i,7n,26p,392b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,7n,26p,428b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on reference.dvi (1 page, 5576 bytes).
+Output written on reference.dvi (1 page, 6124 bytes).

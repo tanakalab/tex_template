@@ -1,5 +1,14 @@
 \begin{thebibliography}{10}
 
+\bibitem{ABV}
+F.~Baboescu, and G.~Varghese, ``Scalable {P}acket {C}lassification,'' SIGCOMM
+  Comput. Commun. Rev., vol.31, no.4, pp.199--210, Aug. 2001.
+
+\bibitem{CrossProducting}
+V.~Srinivasan, G.~Varghese, S.~Suri, and M.~Waldvogel, ``Fast and {S}calable
+  {L}ayer {F}our {S}witching,'' SIGCOMM Comput. Commun. Rev., vol.28, no.4,
+  pp.191--202, Oct. 1998.
+
 \bibitem{survey_Taylor_2005}
 D.E. Taylor, ``Survey and taxonomy of packet classification techniques,'' ACM
   Comput. Surv., vol.37, no.3, pp.238--275, Sept. 2005.
@@ -9,9 +18,9 @@ P.~Gupta, and N.~Mckeown, ``Packet classification using hierarchical
   intelligent cuttings,'' in Hot Interconnects VII, pp.34--41, 1999.
 
 \bibitem{rbt}
-K.~TANAKA, and K.~MIKAWA, ``Run-{B}ased {T}rie {I}nvolving the {S}tructure of
-  {A}rbitrary {B}itmask {R}ules,'' IEICE Trans. Commun., vol.E98-D, no.6, Jun
-  2015.
+K.~MIKAWA, and K.~TANAKA, ``Run-{B}ased {T}rie {I}nvolving the {S}tructure of
+  {A}rbitrary {B}itmask {R}ules,'' IEICE Transactions on Information and
+  Systems, vol.E98.D, no.6, pp.1206-1212, 2015.
 
 \bibitem{yuto}
 小林由人，三河賢治，田中賢，``トライを用いた高速パケット分類法の提案，\inhibitglue
