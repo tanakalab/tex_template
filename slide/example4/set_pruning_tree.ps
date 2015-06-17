@@ -1,0 +1,1207 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 46 530 561 727
+%%Title: set_pruning_tree
+%%CreationDate: Sat Jun 13 17:46:02 2015
+%%Creator: Tgif-4.2.5-QPL written by William Chia-Wei Cheng (bill.cheng@acm.org)
+%%ProducedBy: (unknown)
+%%Orientation: Portrait
+%%Pages: 1
+%%DocumentFonts: (atend)
+%%EndComments
+%%BeginProlog
+
+/tgifdict 56 dict def
+tgifdict begin
+
+/tgifellipsedict 6 dict def
+tgifellipsedict /mtrx matrix put
+
+/TGEL % tgifellipse
+ { tgifellipsedict begin
+      /yrad exch def
+      /xrad exch def
+      /y exch def
+      /x exch def
+      /savematrix mtrx currentmatrix def
+      x y translate
+      xrad yrad scale
+      0 0 1 0 360 arc
+      savematrix setmatrix
+   end
+ } def
+
+/tgifarrowtipdict 8 dict def
+tgifarrowtipdict /mtrx matrix put
+
+/TGAT % tgifarrowtip
+ { tgifarrowtipdict begin
+      /dy exch def
+      /dx exch def
+      /h exch def
+      /w exch def
+      /y exch def
+      /x exch def
+      /savematrix mtrx currentmatrix def
+      x y translate
+      dy dx atan rotate
+      0 0 moveto
+      w neg h lineto
+      w neg h neg lineto
+      savematrix setmatrix
+   end
+ } def
+
+/TGMAX
+ { exch dup 3 1 roll exch dup 3 1 roll gt { pop } { exch pop } ifelse
+ } def
+/TGMIN
+ { exch dup 3 1 roll exch dup 3 1 roll lt { pop } { exch pop } ifelse
+ } def
+/TGSW { stringwidth pop } def
+/tgifstrw 0 def
+
+/bd { bind def } bind def
+
+/GS { gsave } bd
+/GR { grestore } bd
+/NP { newpath } bd
+/CP { closepath } bd
+/CHP { charpath } bd
+/CT { curveto } bd
+/L { lineto } bd
+/RL { rlineto } bd
+/M { moveto } bd
+/RM { rmoveto } bd
+/S { stroke } bd
+/F { fill } bd
+/TR { translate } bd
+/RO { rotate } bd
+/SC { scale } bd
+/MU { mul } bd
+/DI { div } bd
+/DU { dup } bd
+/NE { neg } bd
+/AD { add } bd
+/SU { sub } bd
+/PO { pop } bd
+/EX { exch } bd
+/CO { concat } bd
+/CL { clip } bd
+/EC { eoclip } bd
+/EF { eofill } bd
+/IM { image } bd
+/IMM { imagemask } bd
+/ARY { array } bd
+/SG { setgray } bd
+/RG { setrgbcolor } bd
+/SD { setdash } bd
+/W { setlinewidth } bd
+/SM { setmiterlimit } bd
+/SLC { setlinecap } bd
+/SLJ { setlinejoin } bd
+/SH { show } bd
+/FF { findfont } bd
+/MS { makefont setfont } bd
+/AR { arcto 4 {pop} repeat } bd
+/CURP { currentpoint } bd
+/FLAT { flattenpath strokepath clip newpath } bd
+/TGSM { tgiforigctm setmatrix } def
+/TGRM { savematrix setmatrix } def
+
+end
+
+%%EndProlog
+%%Page: 1 1
+
+%%PageBoundingBox: 46 530 561 727
+tgifdict begin
+/tgifsavedpage save def
+
+1 SM
+1 W
+
+0 SG
+
+72 0 MU 72 11.602 MU TR
+72 128 DI 100.000 MU 100 DI DU NE SC
+
+GS
+
+/tgiforigctm matrix currentmatrix def
+
+% OVAL
+0 SG
+NP 100 500 5 5 TGEL F
+GS
+   GS
+      NP 100 500 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 150 500 5 5 TGEL F
+GS
+   GS
+      NP 150 500 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 200 500 5 5 TGEL F
+GS
+   GS
+      NP 200 500 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 250 500 5 5 TGEL F
+GS
+   GS
+      NP 250 500 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 125 450 5 5 TGEL F
+GS
+   GS
+      NP 125 450 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 225 450 5 5 TGEL F
+GS
+   GS
+      NP 225 450 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 175 400 5 5 TGEL F
+GS
+   GS
+      NP 175 400 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 300 500 5 5 TGEL F
+GS
+   GS
+      NP 300 500 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 350 500 5 5 TGEL F
+GS
+   GS
+      NP 350 500 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 325 450 5 5 TGEL F
+GS
+   GS
+      NP 325 450 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 400 500 5 5 TGEL F
+GS
+   GS
+      NP 400 500 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 450 500 5 5 TGEL F
+GS
+   GS
+      NP 450 500 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 425 450 5 5 TGEL F
+GS
+   GS
+      NP 425 450 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 375 400 5 5 TGEL F
+GS
+   GS
+      NP 375 400 5 5 TGEL
+      S
+   GR
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      100 500 M
+      125 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      150 500 M
+      125 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      175 400 M
+      125 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      175 400 M
+      225 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      225 450 M
+      200 500 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      250 500 M
+      225 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      300 500 M
+      325 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      325 450 M
+      350 500 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      400 500 M
+      425 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      425 450 M
+      450 500 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      425 450 M
+      375 400 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      375 400 M
+      325 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% OVAL
+0 SG
+NP 275 300 5 5 TGEL F
+GS
+   GS
+      NP 275 300 5 5 TGEL
+      S
+   GR
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   [8 8] 0 SD
+   NP
+      275 300 M
+      85 -85 atan DU cos 8.000 MU 190 exch SU
+      exch sin 8.000 MU 385 exch SU L
+   TGSM
+   1 W
+   S
+   [] 0 SD
+GR
+GS
+   TGSM
+   NP
+      190 385 8.000 3.000 -85 85 TGAT
+   1 SG CP F
+   0 SG
+   NP
+      190 385 8.000 3.000 -85 85 TGAT
+   CP F
+GR
+
+% OVAL
+0 SG
+NP 500 500 5 5 TGEL F
+GS
+   GS
+      NP 500 500 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 525 450 5 5 TGEL F
+GS
+   GS
+      NP 525 450 5 5 TGEL
+      S
+   GR
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      500 500 M
+      525 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      525 450 M
+      575 400 L
+   TGSM
+   1 W
+   S
+GR
+
+% OVAL
+0 SG
+NP 400 250 5 5 TGEL F
+GS
+   GS
+      NP 400 250 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 550 200 5 5 TGEL F
+GS
+   GS
+      NP 550 200 5 5 TGEL
+      S
+   GR
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      550 200 M
+      400 250 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      400 250 M
+      275 300 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   [4 12] 0 SD
+   NP
+      550 200 M
+      185 25 atan DU cos 8.000 MU 575 exch SU
+      exch sin 8.000 MU 385 exch SU L
+   TGSM
+   1 W
+   S
+   [] 0 SD
+GR
+GS
+   TGSM
+   NP
+      575 385 8.000 3.000 25 185 TGAT
+   1 SG CP F
+   0 SG
+   NP
+      575 385 8.000 3.000 25 185 TGAT
+   CP F
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      625 500 M
+      650 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      650 450 M
+      700 400 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      700 400 M
+      750 450 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      550 200 M
+      700 250 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   NP
+      700 250 M
+      620 300 L
+   TGSM
+   1 W
+   S
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   [4 12] 0 SD
+   NP
+      620 300 M
+      85 65 atan DU cos 8.000 MU 685 exch SU
+      exch sin 8.000 MU 385 exch SU L
+   TGSM
+   1 W
+   S
+   [] 0 SD
+GR
+GS
+   TGSM
+   NP
+      685 385 8.000 3.000 65 85 TGAT
+   1 SG CP F
+   0 SG
+   NP
+      685 385 8.000 3.000 65 85 TGAT
+   CP F
+GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      785 285 M
+      GS
+            0 SG
+            /Courier FF [32 0 0 -32 0 0] MS
+            (Dest-Trie) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      785 460 M
+      GS
+            0 SG
+            /Courier FF [32 0 0 -32 0 0] MS
+            (Source-Trie) SH
+      GR
+   GR
+
+% BOX
+0 SG
+GS
+   10 SM
+   GS
+      NP 95 195 M 995 195 L 995 535 L 95 535 L CP
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 700 250 5 5 TGEL
+CP 1 SG F
+   0 SG
+GS
+   GS
+      NP 700 250 5 5 TGEL
+      S
+   GR
+GR
+
+% POLY/OPEN-SPLINE
+0 SG
+GS
+   [4 12] 0 SD
+   NP
+      400 250 M
+      135 -25 atan DU cos 8.000 MU 375 exch SU
+      exch sin 8.000 MU 385 exch SU L
+   TGSM
+   1 W
+   S
+   [] 0 SD
+GR
+GS
+   TGSM
+   NP
+      375 385 8.000 3.000 -25 135 TGAT
+   1 SG CP F
+   0 SG
+   NP
+      375 385 8.000 3.000 -25 135 TGAT
+   CP F
+GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      310 270 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      445 225 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      130 425 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      90 480 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      330 425 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      190 480 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      290 480 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      390 480 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      490 480 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      615 480 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      525 430 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      650 430 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% OVAL
+0 SG
+NP 575 400 5 5 TGEL F
+GS
+   GS
+      NP 575 400 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 625 500 5 5 TGEL F
+GS
+   GS
+      NP 625 500 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 650 450 5 5 TGEL F
+GS
+   GS
+      NP 650 450 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 700 400 5 5 TGEL F
+GS
+   GS
+      NP 700 400 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 750 450 5 5 TGEL F
+GS
+   GS
+      NP 750 450 5 5 TGEL
+      S
+   GR
+GR
+
+% OVAL
+0 SG
+NP 620 300 5 5 TGEL F
+GS
+   GS
+      NP 620 300 5 5 TGEL
+      S
+   GR
+GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      640 275 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($0$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      145 480 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($1$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      245 480 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($1$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      345 480 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($1$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      445 480 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($1$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      210 425 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($1$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      410 425 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($1$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      740 430 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($1$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      645 225 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($1$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      85 535 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F7$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      135 535 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F2$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      185 535 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F1$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      235 535 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F5$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      285 535 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F7$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      335 535 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F2$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      385 535 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F1$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      485 535 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F7$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      610 535 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F7$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      740 485 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F6$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      430 450 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F3$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      230 450 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F3$) SH
+      GR
+   GR
+
+% TEXT
+NP
+0 SG
+   GS
+      1 W
+      180 450 M
+      GS
+            0 SG
+            /Courier FF [24 0 0 -24 0 0] MS
+            ($F4$) SH
+      GR
+   GR
+
+GR
+tgifsavedpage restore
+end
+showpage
+
+%%Trailer
+%MatchingCreationDate: Sat Jun 13 17:46:02 2015
+%%DocumentFonts: Courier
+%%EOF

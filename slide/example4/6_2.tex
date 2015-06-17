@@ -1,0 +1,659 @@
+\documentclass[12pt,dvipdfmx,mathserif,uplatex,aspectratio=32]{beamer}
+%\usetheme{Singapore}
+\usetheme{CambridgeUK}
+\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+\usepackage{euler}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{intersections, calc}
+\usetikzlibrary{decorations.pathmorphing}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+\setbeamerfont{title}{size=\LARGE}
+\setbeamertemplate{navigation symbols}{} % ナビゲーションをなくす
+\setbeamertemplate{items}[default]
+
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+
+%% \myCoilArrow{長さ} : スライド用の右矢印
+\newcommand{\myRightArrow}[1]{%
+\tikz[baseline=-1pt]
+  \draw (0,0)--(.5,0)--(.5,-0.1)--(.7,.1)--(.5,.3)--(.5,.2)--(.5,.2)--(0,.2)--(0,0);
+}
+
+\title{Aggregated Bit-Vector (ABV) \\ Cross Producting}
+\subtitle{2015年度 前期輪講 \\ "Survey and Taxonomy of Packet Classification Techniques" \\ Abstract and Introduction}
+\author{原田崇司}
+\date[]{2015年6月16日}
+\institute{神奈川大学大学院 理学研究科 情報科学専攻 田中研究室}
+% [..]に省略名が書ける
+
+\begin{document}
+
+
+
+% 1ページ目
+\frame{\maketitle}
+
+\section*{目次}
+
+% 2ページ目
+\begin{frame}{目次}
+  \tableofcontents
+\end{frame}
+
+
+
+\section{Aggregated Bit-Bector (2001)}
+
+% 3ページ目
+\begin{frame}{ABV前に提案されたフィルタリング法の問題点}
+
+ \begin{itemize}
+  \item 特殊なハードを使用 \hspace{5mm} (TCAM) \vspace{3mm}
+  \item フィールド数$2$以下で構成されるルールに特化 \\ (CrossProducting, Hicuts, RFC, etc) \\ \vspace{2mm} \myRightArrow \\ フィールド数$3$以上では使用メモリ量が膨大 %\vspace{3mm}
+ \end{itemize}
+
+\end{frame}
+
+% 4ページ目
+\begin{frame}{Aggregated Bit Vector}
+
+\vspace{-10mm}
+
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[t]{.3\textwidth}
+  {\footnotesize
+  {\centering
+  %
+ \begin{tabular}{c|l|l}
+  Rule    & $Field_{1}$ & $Field_{2}$ \\ \hline
+  $F_{0}$ & $00*$       & $00*$ \\ \hline
+  $F_{1}$ & $00*$       & $01*$ \\ \hline
+  $F_{2}$ & $10*$       & $11*$ \\ \hline
+  $F_{3}$ & $11*$       & $10*$ \\ \hline
+  $F_{4}$ & $0*$        & $10*$ \\ \hline
+  $F_{5}$ & $0*$        & $11*$ \\ \hline
+  $F_{6}$ & $0*$        & $0*$  \\ \hline
+  $F_{7}$ & $1*$        & $01*$ \\ \hline
+  $F_{8}$ & $1*$        & $0*$  \\ \hline
+  $F_{9}$ & $11*$       & $0*$  \\ \hline
+  $F_{10}$ & $10*$       & $10*$
+ \end{tabular}
+
+  }
+  }
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[c]{.6\textwidth}
+   \vspace{8mm}
+   \scalebox{0.45}{\input{abv.tps}}
+  \end{minipage}
+\end{figure}
+
+{\centering
+四角で囲われたのがBit Vector，その下の太字がABV
+
+}
+
+\end{frame}
+
+% 5ページ目
+\begin{frame}{Aggregated Bit Vector}
+
+\begin{block}{$H_{1} = 00 \dots, \ H_{2} = 11 \dots$のパケットをBVで探索}
+
+\begin{equation*}
+ \begin{array}{ll}
+  Field_{1} & 11001110000 \\ 
+  Field_{2} & 00100100000 \\ \hline
+  AND      & 00000100000 
+ \end{array}
+\end{equation*}
+\end{block}
+
+\begin{block}{$H_{1} = 00 \dots , \ H_{2} = 11 \dots$をABVも用いて探索}
+\vspace{-5mm}
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[t]{.45\textwidth}
+\begin{equation*}
+ \begin{array}{ll}
+  Field_{1} & \mathbf{110} \\
+  Field_{2} & \mathbf{110} \\ \hline
+  AND      &  \mathbf{110}
+ \end{array}
+\end{equation*}
+
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[t]{.45\textwidth}
+\begin{equation*}
+ \begin{array}{ll}
+  Field_{1} & 1100111 \\
+  Field_{2} & 0010010 \\ \hline
+  AND      &  0000010
+ \end{array}
+\end{equation*}
+
+  \end{minipage}
+\end{figure}
+
+初めにABVのANDをとって，BVの探索する場所を絞り込む
+
+\end{block}
+\end{frame}
+
+% 6ページ目
+\begin{frame}{Aggregated Bit Vector}
+
+\noindent ABVを用いた場合に残念なことが起こる例
+
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[t]{.4\textwidth}
+  {\footnotesize
+  {\centering
+  %
+  \begin{tabular}{c|l|l} 
+   Filter   & $Field_{1}$ & $Field_{2}$ \\ \hline
+   $F_{0} $ & $00000*$    & $11*$   \\ \hline
+   $F_{1} $ & $1*$        & $1010*$  \\ \hline
+   $F_{2} $ & $00000*$    & $0*$    \\ \hline
+   $F_{3} $ & $01*$       & $1010*$  \\ \hline
+   $F_{4} $ & $00000*$    & $100*$   \\ \hline
+   $F_{5} $ & $100*$      & $1010*$  \\ \hline
+   $F_{6} $ & $00000*$    & $000*$  \\ \hline
+   $F_{7} $ & $001*$      & $1010*$  \\ \hline
+   $F_{8} $ & $00000*$    & $01*$   \\ \hline
+   $F_{9} $ & $11*$      & $1010*$  \\ \hline
+   $F_{10} $ & $0000*$    & $0*$   \\ \hline
+   $F_{11} $ & $010$      & $1010*$  \\ \hline
+   $F_{12} $ & $0000*$    & $1010*$   
+  \end{tabular}
+  %\tblcaption{RuleList1}
+
+  }
+  }
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[c]{.55\textwidth}
+  Aggrgeation Size $= 2$
+  \par
+  \vspace{5mm}
+
+  $H_{1} = 00000 \dots, \ H_{2} = 1010 \dots $
+
+   \begin{equation*}
+    \begin{array}{lll}
+     F_{1} & 1111111 & ({\rm AVB \ of \ } 00000) \\
+     F_{2} & 1111111 & ({\rm AVB \ of \ } 1010) \\ \hline
+           & 1111111 & 
+    \end{array}
+   \end{equation*}
+
+   \begin{equation*}
+    \begin{array}{lll}
+     F_{1} & 1010101010101 & ({\rm VB \ of \ } 00000) \\
+     F_{2} & 0101010101011 & ({\rm VB \ of \ } 1010) \\ \hline
+           & 0000000000001 &
+    \end{array}
+   \end{equation*}
+
+  \end{minipage}
+\end{figure}
+
+\end{frame}
+
+
+% 7ページ目
+\begin{frame}{Aggregated Bit Vector}
+
+ポリシーに違反しないようにフィルタを並び替える
+
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[t]{.4\textwidth}
+  {\footnotesize
+  {\centering
+  %
+  \begin{tabular}{c|l|l} 
+   Filter   & $Field_{1}$ & $Field_{2}$ \\ \hline
+   $F_{0} $ & $00000*$    & $11*$   \\ \hline
+   $F_{1} $ & $1*$        & $1010*$  \\ \hline
+   $F_{2} $ & $00000*$    & $0*$    \\ \hline
+   $F_{3} $ & $01*$       & $1010*$  \\ \hline
+   $F_{4} $ & $00000*$    & $100*$   \\ \hline
+   $F_{5} $ & $100*$      & $1010*$  \\ \hline
+   $F_{6} $ & $00000*$    & $000*$  \\ \hline
+   $F_{7} $ & $001*$      & $1010*$  \\ \hline
+   $F_{8} $ & $00000*$    & $01*$   \\ \hline
+   $F_{19} $ & $11*$      & $1010*$  \\ \hline
+   $F_{10} $ & $0000*$    & $0*$   \\ \hline
+   $F_{11} $ & $010$      & $1010*$  \\ \hline
+   $F_{12} $ & $0000*$    & $1010*$   
+  \end{tabular}
+  %\tblcaption{RuleList1}
+
+  }
+  }
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[c]{.55\textwidth}
+  {\footnotesize
+  {\centering
+  %
+  \begin{tabular}{c|l|l} 
+   Filter   & $Field_{1}$ & $Field_{2}$ \\ \hline
+   $F_{0}^{'} $ & $00000*$    & $11*$   \\ \hline
+   $F_{1}^{'} $ & $00000*$    & $0*$    \\ \hline
+   $F_{2}^{'} $ & $00000*$    & $100*$   \\ \hline
+   $F_{3}^{'} $ & $00000*$    & $000*$  \\ \hline
+   $F_{4}^{'} $ & $00000*$    & $01*$   \\ \hline
+   $F_{5}^{'} $ & $0000*$    & $0*$   \\ \hline
+   $F_{6}^{'} $ & $0000*$    & $1010*$   \\ \hline
+   $F_{7}^{'} $ & $1*$        & $1010*$  \\ \hline
+   $F_{8}^{'} $ & $01*$       & $1010*$  \\ \hline
+   $F_{9}^{'} $ & $100*$      & $1010*$  \\ \hline
+   $F_{10}^{'} $ & $001*$      & $1010*$  \\ \hline
+   $F_{11}^{'} $ & $11*$      & $1010*$  \\ \hline
+   $F_{12}^{'} $ & $010$      & $1010*$ 
+  \end{tabular}
+  %\tblcaption{RuleList1}
+
+  }
+  }
+  \end{minipage}
+\end{figure}
+
+\end{frame}
+
+% 8ページ目
+\begin{frame}{Aggregated Bit Vector}
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[c]{.5\textwidth}
+   \begin{equation*}
+    \begin{array}{lll}
+     F_{1} & 1111111000000 & ({\rm VB \ of \ } 00000) \\
+     F_{2} & 0000001111111 & ({\rm VB \ of \ } 1010) \\ \hline
+           & 0000001000000 &
+    \end{array}
+   \end{equation*}
+
+   \begin{equation*}
+    \begin{array}{lll}
+     F_{1} & 1111000 & ({\rm AVB \ of \ } 00000) \\
+     F_{2} & 0001111 & ({\rm AVB \ of \ } 1010) \\ \hline
+           & 0001000 & 
+    \end{array}
+   \end{equation*}
+
+   \begin{equation*}
+    \begin{array}{lll}
+     F_{1} & 10 & ({\rm search \ only } \ 6,7 \ {\rm bits}) \\
+     F_{2} & 11 & ({\rm search \ only } \ 6,7 \ {\rm bits}) \\ \hline
+           & 10 & 
+    \end{array}
+   \end{equation*}
+
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[c]{.43\textwidth}
+  
+  \vspace{3mm}
+  ルールを並び替えた後に$H_{1} = 00000 \dots$, $\ H_{2} = 1010 \dots $ を探索
+
+  \[
+   7 + 13 = 20 \to 7 + 2 = 9
+  \]
+  メモリアクセス数減少
+  \end{minipage}
+\end{figure}
+
+\end{frame}
+
+% 9ページ目
+
+\section{Cross Producting (1998)}
+
+% 10ページ目
+\begin{frame}{Set Pruning Tree}
+
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[t]{.3\textwidth}
+  {\scriptsize
+  {\centering
+  %
+  \begin{tabular}{c|c|c} 
+   Filter   & Destination & Source \\ \hline
+   $F_{1} $ & $0*$        & $10*$   \\ \hline
+   $F_{2} $ & $0*$        & $01*$   \\ \hline
+   $F_{3} $ & $0*$        & $1*$   \\ \hline
+   $F_{4} $ & $00*$       & $1*$   \\ \hline
+   $F_{5} $ & $00*$       & $11*$   \\ \hline
+   $F_{6} $ & $10*$       & $1*$   \\ \hline
+   $F_{7} $ & $*$         & $00*$   
+  \end{tabular}
+  \tblcaption{RuleList1}
+
+  }
+  }
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[c]{.6\textwidth}
+   \vspace{8mm}
+   \scalebox{0.45}{\input{set_pruning_tree.tps}}
+   \vspace{-6mm}
+   \caption{Set Pruning Tree of RuleList1}
+  \end{minipage}
+\end{figure}
+
+\vspace{3mm}
+
+Dest-Trieの白丸ノードは，ルートからそのノードへのパスで構成されるビット列が，Destination フィールドにないことを表現
+
+\end{frame}
+
+% 10ページ目
+\begin{frame}{Set Pruning Tree}
+
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[c]{.55\textwidth}
+   \scalebox{0.45}{\input{set_pruning_tree_search.tps}}
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[c]{.3\textwidth}
+  $D = 00 \dots$
+  \par
+  $S = 10 \dots$
+  \end{minipage}
+\end{figure}
+
+\vspace{5mm}
+Dest-Trie を $0 \to 0$，Source-Trie を $1 \to 0$ と辿り，$F_{1}$を返す．
+\par
+\vspace{3mm}
+(Longest Prefix Matchingなので，途中の$F_{3}, F_{4}$は無視)
+\end{frame}
+
+% 11ページ目
+\begin{frame}{Grid of Tries}
+
+ \begin{itemize}
+  \item 二つのフィールドしか持たないルール限定の方法 \vspace{3mm}
+  \item フィールドはプレフィックスで指定 \\ (レンジルールはプレフィックスルールへ変換) \vspace{3mm}
+  \item パケットとルールのマッチングは Longest Prefix Matching
+ \end{itemize}
+
+\end{frame}
+
+% 12ページ目
+\begin{frame}{Grid of Tries}
+
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[t]{.3\textwidth}
+  {\scriptsize
+  {\centering
+  %
+  \begin{tabular}{c|c|c} 
+   Filter   & Destination & Source \\ \hline
+   $F_{1} $ & $0*$        & $10*$   \\ \hline
+   $F_{2} $ & $0*$        & $01*$   \\ \hline
+   $F_{3} $ & $0*$        & $1*$   \\ \hline
+   $F_{4} $ & $00*$       & $1*$   \\ \hline
+   $F_{5} $ & $00*$       & $11*$   \\ \hline
+   $F_{6} $ & $10*$       & $1*$   \\ \hline
+   $F_{7} $ & $*$         & $00*$   
+  \end{tabular}
+  \tblcaption{RuleList1}
+
+  }
+  }
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[c]{.6\textwidth}
+   \vspace{8mm}
+   \scalebox{0.45}{\input{grid_of_trie.tps}}
+   \vspace{-6mm}
+   \caption{Grid of Tries of RuleList1}
+  \end{minipage}
+\end{figure}
+
+\vspace{3mm}
+
+ルールの重複を避けるために，\par Destinationに完全に一致する箇所にのみSourceのトライを構成
+
+\end{frame}
+
+% ページ目
+\begin{frame}{Grid of Tries}
+
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[c]{.55\textwidth}
+   \scalebox{0.55}{\input{grid_of_trie_search.tps}}
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[c]{.2\textwidth}
+  $D = 001 \dots$
+  \par
+  $S = 001 \dots$
+  \end{minipage}
+\end{figure}
+
+\vspace{3mm}
+D-Trieを$0 \to 0$と辿るが，S-Trieを辿れず，D-Trieの$0*$へ
+\par
+\vspace{2mm}
+S-Trieを$0$と辿るがフィルタに合致しないので，D-Trieの$*$へ
+\par
+\vspace{2mm}
+S-Trieを$0 \to 0$と辿って，$F_{7}$を返す．
+\end{frame}
+
+% ページ目
+\begin{frame}{Grid of Tries (with Switch Pointers)}
+
+ \begin{figure}
+  {\centering
+  \scalebox{0.6}{\input{grid_of_trie_switch.tps}}
+
+  }
+ \end{figure}
+
+\vspace{5mm}
+
+探索時間計算量を$O(dW^{2})$から$O(dW)$とするために
+\par
+\vspace{3mm}
+スイッチポインタを与える
+
+\end{frame}
+
+% ページ目
+\begin{frame}{Extend Grid of Tries}
+
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[t]{.5\textwidth}
+  {\scriptsize
+  {\centering
+  %
+  \begin{tabular}{c|l|l|c|c|c} 
+   Filter   & DA      & SA     & DP     & SP     & Prot \\ \hline
+   $F_{1} $ & $0*$    & $10*$  & $*$    & $80$   & TCP  \\ \hline
+   $F_{2} $ & $0*$    & $01*$  & $*$    & $80$   & TCP  \\ \hline
+   $F_{3} $ & $0*$    & $1*$   & $17$   & $17$   & UDP \\ \hline
+   $F_{4} $ & $00*$   & $1*$   & $*$    & $*$    & $*$ \\ \hline
+   $F_{5} $ & $00*$   & $11*$  & $*$    & $*$    & TCP \\ \hline
+   $F_{6} $ & $10*$   & $1*$   & $17$   & $17$   & UDP \\ \hline
+   $F_{7} $ & $*$     & $00*$  & $*$    & $*$    & $*$
+   %% $F_{8} $ & $0$     & $10*$  & $*$    & $100$  & TCP \\ \hline
+   %% $F_{9} $ & $0*$    & $1*$   & $17$   & $44$   & UDP \\ \hline
+   %% $F_{10}$ & $0*$    & $10*$  & $80$   & $*$    & TCP \\ \hline
+   %% $F_{11}$ & $111*$  & $000*$ & $*$    & $44$   & UDP 
+  \end{tabular}
+  \tblcaption{ポート番号，プロトコル追加}
+
+  }
+  }
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[c]{.48\textwidth}
+   \begin{itemize}
+    \item Port番号
+    \item プロトコル
+   \end{itemize}
+   もフィルタリングの基準として使用
+
+\par
+(ポート番号は範囲指定不可)
+\par
+\vspace{5mm}
+ポート番号の四つ組合わせに \par 対してハッシュ表を作成
+\par
+\vspace{2mm}
+(DA, SA)の組 =
+\par  \{ ($*$, $*$), ($*$, 指定), (指定, $*$), (指定, 指定) \} 
+  \end{minipage}
+\end{figure}
+
+\end{frame}
+
+% ページ目
+\begin{frame}{Extend Grid of Tries（未完）}
+
+ \begin{figure}
+  {\centering
+  \scalebox{0.6}{\input{extended_grid_of_trie.tps}}
+
+  }
+ \end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Cross Producting}
+
+\begin{figure}[h]
+ \def\@captype{table}
+ \begin{minipage}[t]{.5\textwidth}
+  {\scriptsize
+  {\centering
+  %
+  \begin{tabular}{c|l|l|c|c|c} 
+   Filter   & DA      & SA     & DP     & SP     & Prot \\ \hline
+   $F_{1} $ & $0*$    & $10*$  & $*$    & $80$   & TCP  \\ \hline
+   $F_{2} $ & $0*$    & $01*$  & $*$    & $80$   & TCP  \\ \hline
+   $F_{3} $ & $0*$    & $1*$   & $17$   & $17$   & UDP \\ \hline
+   $F_{4} $ & $00*$   & $1*$   & $*$    & $*$    & $*$ \\ \hline
+   $F_{5} $ & $00*$   & $11*$  & $*$    & $*$    & TCP \\ \hline
+   $F_{6} $ & $10*$   & $1*$   & $17$   & $17$   & UDP \\ \hline
+   $F_{7} $ & $*$     & $00*$  & $*$    & $*$    & $*$
+   %% $F_{8} $ & $0$     & $10*$  & $*$    & $100$  & TCP \\ \hline
+   %% $F_{9} $ & $0*$    & $1*$   & $17$   & $44$   & UDP \\ \hline
+   %% $F_{10}$ & $0*$    & $10*$  & $80$   & $*$    & TCP \\ \hline
+   %% $F_{11}$ & $111*$  & $000*$ & $*$    & $44$   & UDP 
+  \end{tabular}
+  %\tblcaption{ポート番号，プロトコル追加}
+
+  }
+  }
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[c]{.48\textwidth}
+  {\footnotesize
+  {\centering
+  %
+  \begin{tabular}{llccc} 
+   DA    & SA     & DP   & SP    & Prot \\ 
+   $0*$  & $10*$  & $*$  & $80$  & TCP  \\ 
+   $00*$ & $01*$  & $17$ & $17$  & UDP \\ 
+   $10*$ & $1*$   &      & $*$   & $*$ \\ 
+   $*$   & $11*$  &      &       &     \\
+         & $00*$  &      &       &
+   %% $F_{8} $ & $0$     & $10*$  & $*$    & $100$  & TCP \\ \hline
+   %% $F_{9} $ & $0*$    & $1*$   & $17$   & $44$   & UDP \\ \hline
+   %% $F_{10}$ & $0*$    & $10*$  & $80$   & $*$    & TCP \\ \hline
+   %% $F_{11}$ & $111*$  & $000*$ & $*$    & $44$   & UDP 
+  \end{tabular}
+  %\tblcaption{ポート番号，プロトコル追加}
+
+  }
+  }
+
+  \end{minipage}
+ 
+  \vspace{8mm}
+  各フィールドにおいて異なるルールを集めてその直積をとる．
+  \par
+  \vspace{3mm}
+  そして，各々の組み合わせに対して最優先ルールを与える．
+\end{figure}
+
+
+
+\end{frame}
+
+
+
+\begin{frame}{On Demand Cross-Producting}
+Cross-Productingは，空間計算量が$O(N^{K})$となり実用的でない．
+($N$はルール数，$K$はフィールド数)
+
+\vspace{5mm}
+
+\myRightArrow \par フィルタリングを行いながら Cross-Producting表を作成
+
+\end{frame}
+
+\begin{frame}{参考文献}
+
+{\scriptsize
+\begin{thebibliography}{99}
+\setlength{\itemsep}{-.5zw}
+\beamertemplatetextbibitems
+
+\bibitem{ABV} F. Baboescu, and G. Varghese, “Scalable Packet Classification,” SIGCOMM Comput. Commun. Rev., vol.31, no.4, pp.199–210, Aug. 2001. 
+\vspace{5mm}
+
+\bibitem{CrossProducting} V. Srinivasan, G. Varghese, S. Suri, and M. Waldvogel, “Fast and Scalable Layer Four Switching,” SIGCOMM Comput. Commun. Rev., vol.28, no.4, pp.191–202, Oct. 1998.
+
+\end{thebibliography}
+}
+
+\end{frame}
+
+
+\end{document}
