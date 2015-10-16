@@ -2,13 +2,15 @@
 
 \documentclass[10pt,twocolumn]{jarticle} 
 \usepackage{algorithmic, algorithm}
-\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{hyperref}
 \usepackage{fancybox}
 \usepackage{comment}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{euler}
+
 
 \pagestyle{empty}
 
@@ -117,6 +119,68 @@
  \item \verb|\[ \]|を用いる（数式に番号を振らない）
 \end{itemize}
 
+\subsubsection{Sub Graph Mergingに関する諸命題}
+
+ルール$R_{k}$の部分グラフを$S_{k}$とする．部分グラフ$S_{k}$に含まれるルールの評価パケット数の平均を$A(S_{k})$と表す．ルール$R_{j}$がルール$R_{i}$に従属することを$R_{i} \Downarrow R_{j}$と表す．
+
+\begin{equation}
+\forall \ R_{j} \in S_{k} \ (\lnot (\exists R_{i} (R_{i} \Downarrow R_{j})) \Rightarrow \| R_{j} \| \leq A(S_{k}))
+\end{equation}
+
+部分グラフ$A,B$の位数がそれぞれ$n, m$であるとし，部分グラフの各ルールをルール番号順（若しくはポリシー違反をおこさない順）に$a_{i}, b_{i} \ (i \leq m)$と表す．
+\begin{align}
+ \begin{aligned}
+  & \frac{\sum_{k=1}^{n}\|a_{k}\|}{n} = \frac{\sum_{k=1}^{m}\|b_{k}\|}{m} \\
+  & \\
+  & \Rightarrow \\
+  & \\
+  & \sum_{k=1}^{n}k \cdot \|a_{k}\| + \sum_{k=n+1}^{n+m}k \cdot \|b_{k-n}\| \\
+= &\sum_{k=1}^{m}k \cdot \|b_{k}\| + \sum_{k=m+1}^{m+n}k \cdot \|a_{k-m}\|
+ \label{nothing}
+ \end{aligned}
+\end{align}
+
+上の命題の結論部分の右辺第2項と左辺第2項をそれぞれ次のように式変形する．
+\begin{align}
+ \begin{aligned}
+  \sum_{k=n+1}^{n+m}k \cdot \|b_{k-n}\| &=
+  \sum_{n+1 \leq k \leq n+m}k \cdot \|b_{k-n}\| \\
+  &= \sum_{n+1 \leq k+n \leq n+m}(k+n) \cdot \|b_{(k+n)-n}\| \\
+  &= \sum_{1 \leq k \leq m}(k+n) \cdot \|b_{k}\| \\
+  &= \sum_{k=1}^{m}(k+n) \cdot \|b_{k}\|
+ \end{aligned}
+\end{align}
+
+\begin{align}
+ \begin{aligned}
+   \sum_{k=m+1}^{m+n}k \cdot \|a_{k-m}\| &= \sum_{m+1 \leq k \leq m+n}k \cdot \|a_{k-m}\| \\
+   &= \sum_{m+1 \leq (k+m) \leq m+n}(k+m) \cdot \|a_{(k+m)-m}\| \\
+   &= \sum_{1 \leq k \leq n}(k+m) \cdot \|a_{k}\| \\
+   &= \sum_{k=1}^{n}(k+m) \cdot \|a_{k}\|
+ \end{aligned}
+\end{align}
+これより，\ref{nothing}の結論部分の命題は
+\begin{align}
+ \begin{aligned}
+  & \sum_{k=1}^{n}k \cdot \|a_{k}\| + \sum_{k=n+1}^{n+m}k \cdot \|b_{k-n}\| \\
+= &\sum_{k=1}^{m}k \cdot \|b_{k}\| + \sum_{k=m+1}^{m+n}k \cdot \|a_{k-m}\| \\
+\iff %& \\
+  & \sum_{k=1}^{n}k \cdot \|a_{k}\| + \sum_{k=1}^{m}(k+n) \cdot \|b_{k}\| \\
+= &\sum_{k=1}^{m}k \cdot \|b_{k}\| + \sum_{k=1}^{n}(k+m) \cdot \|a_{k}\| \\
+\iff %& \\
+  & \sum_{k=1}^{n}(k+m) \cdot \|a_{k}\| -\sum_{k=1}^{n}k \cdot \|a_{k}\| \\
+ = & \sum_{k=1}^{m}(k+n) \cdot \|b_{k}\| - \sum_{k=1}^{m}k \cdot \|b_{k}\| \\
+\iff %&\\
+  &\sum_{k=1}^{n} \bigl((k+m) \cdot \|a_{k}\| - k \cdot \|a_{k}\| \bigr) \\
+ = &\sum_{k=1}^{m} \bigl((k+n) \cdot \|b_{k}\| - k \cdot \|b_{k}\| \bigr) \\
+\iff %&\\
+  & \sum_{k=1}^{n} m \cdot \|a_{k}\| = \sum_{k=1}^{m} n \cdot \|b_{k}\| \\
+\iff & m \sum_{k=1}^{n} \|a_{k}\| = n \sum_{k=1}^{m} \|b_{k}\| \\
+\iff & \frac{\sum_{k=1}^{n} \|a_{k}\|}{n} = \frac{\sum_{k=1}^{m} \|b_{k}\|}{m}
+ \end{aligned}
+\end{align}
+同値変形により得られた命題は，\ref{nothing}で仮定した条件に等しいので，命題\ref{nothing}は正しい．つまり，部分グラフ$A, B$の平均の評価パケット数が同じで$V(A) \cap V(B) = \phi$のとき，どちらの部分グラフのルールをルールリストの上位に配置しても遅延$L(R)$の値は同じである．
+
 田中研究室では，パケットの頻度分布を$F$，ルールリストを${\mathbf R}$として，遅延$L(F, {\mathbf R})$を次のように定義する．
 
 \[
@@ -141,7 +205,12 @@ $\|R_{i}(F, {\mathbf R}\|$は，パケットの頻度分布$F$，ルールリス
 \end{equation}
 を満たすような最小の$\mathbb{N}$である．
 
-\section{まとめ，今後の課題}
+\section{PDFの挿入}
+%\begin{figure}[H]
+ \includegraphics[width=.1\textwidth, bb=0 0 841.92 595.32, clip]{pdftest.pdf}
+%\end{figure}
+
+\section{擬似コード}
 \begin{algorithm}[H]
 \caption{: cutRunFromRule($R_{i}$)}
 \label{cut_run}
@@ -177,7 +246,7 @@ $\|R_{i}(F, {\mathbf R}\|$は，パケットの頻度分布$F$，ルールリス
 \end{algorithmic}
 \end{algorithm}
 
-
+\section{まとめ，今後の課題}
 因数分解を理解する予定．
 
 \par
