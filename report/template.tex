@@ -8,6 +8,7 @@
 \usepackage{comment}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{euler}
 
@@ -24,6 +25,17 @@
 \newcommand{\noin}{\noindent}
 \catcode`@=\active \def@{\hspace{0.9bp}-\hspace{0.9bp}}
 \newtheorem{dfn}{定義}[section]
+\newtheorem{theorem}{定理}[section]
+
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+{1.5\Cvs \@plus.5\Cvs \@minus.2\Cvs}%
+{.5\Cvs \@plus.3\Cvs}%
+{\reset@font\Large\mcfamily}}
+\makeatother
+
+
 
 
 %タイトル
@@ -54,7 +66,10 @@
 % 内容を削る．必要最小限
 %
 % コンマを列挙以外で2つ以上使う，``~の~の''，の如きは使わない．
-
+%
+% 何か命題を示したいときは，「登場人物」をはっきりさせねばならない．
+% 例．× 数列が収束するとは ~ ということである．
+%     ○ 実数列 {a_n} が実数 A に収束するとは ~ ということである．
 % 
 
 \section{概略}
